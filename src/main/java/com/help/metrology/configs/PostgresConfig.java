@@ -1,6 +1,6 @@
 package com.help.metrology.configs;
 
-import com.help.metrology.properties.PostgresProperties;
+import com.help.metrology.properties.v1.PostgresProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;

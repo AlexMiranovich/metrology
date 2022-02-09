@@ -1,4 +1,4 @@
-package com.help.metrology.properties;
+package com.help.metrology.properties.v1;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

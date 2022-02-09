@@ -1,7 +1,7 @@
-package com.help.metrology.repositories.impl;
+package com.help.metrology.repositories.v1.impl;
 
 import com.help.metrology.entitites.Unit;
-import com.help.metrology.repositories.UnitRepository;
+import com.help.metrology.repositories.v1.UnitRepository;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

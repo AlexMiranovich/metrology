@@ -1,4 +1,4 @@
-package com.help.metrology.repositories;
+package com.help.metrology.repositories.v1;
 
 import com.help.metrology.entitites.Unit;
 

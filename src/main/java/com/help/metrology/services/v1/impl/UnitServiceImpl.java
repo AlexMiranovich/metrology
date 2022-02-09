@@ -1,12 +1,11 @@
-package com.help.metrology.services.impl;
+package com.help.metrology.services.v1.impl;
 
-import com.help.metrology.controllers.v1.dto.UnitCreateDto;
+import com.help.metrology.controllers.dto.UnitCreateDto;
 import com.help.metrology.entitites.Unit;
-import com.help.metrology.repositories.UnitRepository;
-import com.help.metrology.services.UnitService;
+import com.help.metrology.repositories.v1.UnitRepository;
+import com.help.metrology.services.v1.UnitService;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -26,9 +25,7 @@ public class UnitServiceImpl implements UnitService {
     public Unit findById(Long id) { return unitRepository.findById(id); }
 
     @Override
-    public List<Unit> findAll() {
-        return unitRepository.findAll();
-    }
+    public List<Unit> findAll() { return unitRepository.findAll(); }
 
     @Override
     public Unit findLastAdded() {
