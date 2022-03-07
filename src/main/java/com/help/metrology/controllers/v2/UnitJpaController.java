@@ -1,7 +1,7 @@
 package com.help.metrology.controllers.v2;
 
-import com.help.metrology.controllers.dto.UnitCreateDto;
-import com.help.metrology.controllers.dto.UnitDto;
+import com.help.metrology.controllers.v1.dto.UnitCreateDto;
+import com.help.metrology.controllers.v1.dto.UnitDto;
 import com.help.metrology.entitites.Unit;
 import com.help.metrology.services.v2.UnitJpaService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,15 +17,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/jpa/unit")
+@AllArgsConstructor
 public class UnitJpaController {
 
     private final UnitJpaService unitJpaService;
     private final ModelMapper modelMapper;
-
-    public UnitJpaController(UnitJpaService unitJpaService, ModelMapper modelMapper) {
-        this.unitJpaService = unitJpaService;
-        this.modelMapper = modelMapper;
-    }
 
     @Operation(summary = "Get unit by id - JPA")
     @ApiResponses(value = {
@@ -44,6 +41,11 @@ public class UnitJpaController {
     public UnitDto createUnit(@RequestBody UnitCreateDto createDto) {
         Unit unit = unitJpaService.save(createDto);
         return modelMapper.map(unit, UnitDto.class);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteUnit(@PathVariable String id) {
+        unitJpaService.delete(Long.valueOf(id));
     }
 
 }

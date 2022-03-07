@@ -1,4 +1,5 @@
 package com.help.metrology.entitites.enums;
 
-public class EquipmentType {
+public enum EquipmentType {
+    ONE, TWO, THREE, FOUR
 }

@@ -1,9 +1,10 @@
 package com.help.metrology.services.v2.impl;
 
-import com.help.metrology.controllers.dto.UnitCreateDto;
+import com.help.metrology.controllers.v1.dto.UnitCreateDto;
 import com.help.metrology.entitites.Unit;
 import com.help.metrology.repositories.v2.UnitJpaRepository;
 import com.help.metrology.services.v2.UnitJpaService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ import java.util.Optional;
 import static com.help.metrology.entitites.enums.Status.ACTIVE;
 
 @Service
+@Slf4j
 public class UnitJpaServiceImpl implements UnitJpaService {
 
     private final UnitJpaRepository unitJpaRepository;
@@ -42,6 +44,13 @@ public class UnitJpaServiceImpl implements UnitJpaService {
             .build();
         return unitJpaRepository.save(newUnit);
     }
+
+    @Override
+    public void delete(Long id) {
+        unitJpaRepository.deleteById(id);
+        log.info("Unit with id = " + id + " was deleted");
+    }
+
 
 
 }

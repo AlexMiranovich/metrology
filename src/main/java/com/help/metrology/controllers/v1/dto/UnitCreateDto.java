@@ -1,4 +1,4 @@
-package com.help.metrology.controllers.dto;
+package com.help.metrology.controllers.v1.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
